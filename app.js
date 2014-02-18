@@ -11,6 +11,37 @@ var path = require('path');
 
 var app = express();
 
+//create the waterline instance
+var Waterline = require('waterline');
+var Todo = Waterline.Collection.extend({
+  tableName: 'todo',
+  schema: true,
+  adapter: require('sails-postgresql'),
+
+  attributes: {
+    task: {
+      type: 'string',
+      required: true
+    },
+    done: {
+      type: 'boolean',
+      required: true
+    }
+  }
+});
+
+//var postgres = require('sails-postgresql');
+new Todo({}, function(err, todos) {
+  todos.find()
+  .exec(function(err, users) {
+    console.log(users);
+  });
+});
+
+
+
+
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');

@@ -1,0 +1,8 @@
+"config": {
+  "database": 'waterline-todo',
+  "host": '127.0.0.1',
+  "user": 'peterdecroos',
+  "password": '',
+  "port": 5432,
+  "pool": false
+};
