@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     },
     dist: {
       src: [
-        
+        'public/bowerfiles/jquery/dist/jquery.js'
       ],
       dest: 'public/javascripts/dependencies.js',
     },
